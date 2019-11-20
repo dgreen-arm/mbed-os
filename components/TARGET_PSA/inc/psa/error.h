@@ -27,7 +27,9 @@ As defined in PSA Firmware Framework v1.0
 #include <stddef.h>
 #include <stdint.h>
 
+#ifndef PSA_SUCCESS
 typedef int32_t psa_status_t;
+#endif
 
 #define PSA_SUCCESS                     ((psa_status_t)0)
 
