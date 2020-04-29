@@ -1523,7 +1523,7 @@ static psa_status_t psa_validate_key_attributes(
     /* Reject invalid flags. These should not be reachable through the API. */
     if( attributes->core.flags & ~ ( MBEDTLS_PSA_KA_MASK_EXTERNAL_ONLY |
                                      MBEDTLS_PSA_KA_MASK_DUAL_USE ) )
-        return( PSA_ERROR_INVALID_ARGUMENT );
+        return( 1111 );
 
     return( PSA_SUCCESS );
 }

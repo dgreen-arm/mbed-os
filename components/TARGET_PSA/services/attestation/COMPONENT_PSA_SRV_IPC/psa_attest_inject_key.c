@@ -48,7 +48,9 @@ psa_attestation_inject_key(const uint8_t *key_data,
         return (PSA_ERROR_COMMUNICATION_FAILURE);
     }
 
+    printf("Error before psa_call: %d\n", call_error);
     call_error = psa_call(handle, in_vec, 2, out_vec, 2);
+    printf("Error after psa_call: %d\n", call_error);
 
     psa_close(handle);
     return call_error;
