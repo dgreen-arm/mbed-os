@@ -95,7 +95,7 @@ psa_attestation_inject_key_impl(const uint8_t *key_data,
         goto exit;
     }
     if (*public_key_data_length > exported_size) {
-        status = PSA_ERROR_INVALID_ARGUMENT;
+        status = 1112;
         goto exit;
     }
 
