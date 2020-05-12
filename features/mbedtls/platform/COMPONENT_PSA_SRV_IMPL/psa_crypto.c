@@ -1520,6 +1520,11 @@ static psa_status_t psa_validate_key_attributes(
     if( psa_get_key_bits( attributes ) > PSA_MAX_KEY_BITS )
         return( PSA_ERROR_NOT_SUPPORTED );
 
+    /* Reject invalid flags. These should not be reachable through the API. */
+    if( attributes->core.flags & ~ ( MBEDTLS_PSA_KA_MASK_EXTERNAL_ONLY |
+                                     MBEDTLS_PSA_KA_MASK_DUAL_USE ) )
+        return( 1111 );
+
     return( PSA_SUCCESS );
 }
 
